@@ -1,0 +1,44 @@
+.title{
+    text-align: center;
+}
+
+.btn-reserver{
+    position: absolute !important;
+    right: 3px !important;
+    bottom: 100px !important;
+}
+
+.bas-page{
+    position: sticky !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    margin-bottom: 0% !important;
+    height: 50px;
+    padding: 0% !important;
+}
+
+.wd-50{
+    width: 50% !important;
+}
+
+.wd-5{
+    width: 5% !important;
+}
+
+.form-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+body{
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+}
+
+.site-content{
+    flex: 1;
+}
