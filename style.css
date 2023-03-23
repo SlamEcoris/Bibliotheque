@@ -33,7 +33,9 @@
 }
 
 body{
-    margin: 0 !important;
+    margin-top: 5px !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
     display: flex !important;
     flex-direction: column !important;
     min-height: 100vh !important;
