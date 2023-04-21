@@ -1,6 +1,6 @@
 <body>
     <?php
-        require "menu.html";
+        include("menu.html");
         require "Model/LivreDb.php";
         require "Model/AuteurDb.php";
     ?>
@@ -42,7 +42,6 @@
               <h6 class="mb-0"><?php echo $titre ?></h6>
               <p class="mb-0 opacity-75"><?php echo $nomAuteur ?></p>
             </div>
-            <button type="button" class="btn btn-outline-secondary">Réserver</button>
           </div>
         </a>
         <?php

@@ -1,7 +1,7 @@
 <body>
     <header class="site-header">
         <?php 
-        require "menu.html";
+        include("menu.html");
         require "Model/LivreDb.php";
         require "Model/AuteurDb.php";
         require "Model/GenreDb.php";
@@ -60,7 +60,7 @@
         </h5>
 
 
-        <button type="button" class="btn btn-outline-secondary btn-reserver">Réserver</button>
+        <a href="cart.php"><button type="button" class="btn btn-outline-secondary btn-reserver">Réserver</button></a>
     </main>
 
     <footer class="site-footer">
