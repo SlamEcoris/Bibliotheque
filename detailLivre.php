@@ -1,14 +1,14 @@
+<?php 
+    require "Model/LivreDb.php";
+    require "Model/AuteurDb.php";
+    require "Model/GenreDb.php";
+    require "Model/AvisDb.php";
+    session_start();
+    //récupération id du livre
+    $idLivre = $_REQUEST['id']
+?>
 <body>
     <header class="site-header">
-        <?php 
-        include("menu.html");
-        require "Model/LivreDb.php";
-        require "Model/AuteurDb.php";
-        require "Model/GenreDb.php";
-        require "Model/AvisDb.php";
-        //récupération id du livre
-        $idLivre = $_REQUEST['id']
-        ?>
     </header>
 
     <?php      
@@ -59,8 +59,13 @@
             ?>
         </h5>
 
-
-        <a href="cart.php"><button type="button" class="btn btn-outline-secondary btn-reserver">Réserver</button></a>
+        <?php 
+            if (isset($_SESSION["connection"])) {
+                if ($_SESSION["connection"]==true) {
+                    echo '<a href="cart.php?id='.$idLivre.'"><button type="button" class="btn btn-outline-secondary btn-reserver">Réserver</button></a>';               } 
+            }
+        ?>
+<!--        <button type="button" class="btn btn-outline-secondary btn-reserver">Réserver</button>-->
     </main>
 
     <footer class="site-footer">

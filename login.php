@@ -1,19 +1,20 @@
 <body>
     <header class="site-header">
-        <?php include("menu.html") ?>
+        <?php //include("menu.html");
+        session_start(); ?>
     </header>
 
     <main class="site-content">
         <h1 class="title"> LOGIN </h1>
         <br>
-        <form class="form-center">
+        <form method="post" action="verifLogin.php" class="form-center">
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
             </div>
             <br>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                 <label for="floatingPassword">Password</label>
             </div>
             <br>

@@ -1,9 +1,10 @@
 <body>
     <?php
-        include("menu.html");
+        require "menu.php";
         require "Model/LivreDb.php";
         require "Model/AuteurDb.php";
-    ?>
+        ?>
+
     <main class="site-content">
         <h5>Fonctionnement du site : </h5>
         <p>Vous pourrez sélectionner dans la liste ci-après un ou plusieurs 

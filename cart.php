@@ -1,6 +1,31 @@
+<?php 
+    require "menu.php";
+    require "Model/LivreDb.php";
+    require "Model/AuteurDb.php";
+    //récupération id du livre
+    //    session_start();
+    $classLivres = new LivreDb();
+    $idLivre = $_REQUEST['id'];
+    $livre = $classLivres->getLivreId($idLivre);
+    $auteurs = $classLivres->LivreAuteurs($idLivre);
+    $nomAuteur="";
+    if ($auteurs != null) {
+      $nbAuteur = count ($auteurs);
+      $ct = 1;
+      foreach ($auteurs as $auteur) {
+            if ($ct < $nbAuteur) {
+            $nomAuteur .= $auteur['Nom']." / ";
+            $ct++;
+            }
+            else {
+            $nomAuteur .= $auteur['Nom'];
+            }
+        }
+    }
+?>
+
 <body>
     <header class="site-header">
-        <?php include("menu.html") ?>
     </header>
 
     <center><h1>Merci pour votre réservation dans notre libraire. Au plaisir de vous revoir très bientôt.</h1></center>
@@ -19,8 +44,8 @@
       <div class="accordion-body">
         <u>Vous avez réservé le livre suivant</u> :
         <br><br>
-        <p>Titre : </p>
-        <p>Ecrit par : </p>
+        <p>Titre : <?php echo $livre["titre"]; ?> </p>
+        <p>Ecrit par : <?php echo $nomAuteur; ?> </p>
     </div>
     </div>
   </div>
