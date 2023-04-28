@@ -31,4 +31,13 @@ class AuteurDb extends Modele {
 		$sql = "DELETE FROM auteurdb WHERE  id = ?";
 		$this->executerRequete($sql, array($id));
 	}
+
+	public function getAuteursLivre ($idLivre) {
+		$sql = "SELECT nom FROM auteurdb INNER JOIN ecritdb ON auteurdb.id = ecritdb.IdAuteur WHERE ecritdb.idLivre = ?";
+		$resultat = $this->executerRequete($sql, $idLivre);
+		if ($resultat->rowCount() > 0)
+			return $resultat->fetchAll();
+		else
+			throw new Exception("Pas de résultat");
+	}
 }
